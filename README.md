@@ -1,2 +1,1 @@
-# flopayusd
- 
+# rupee-token
