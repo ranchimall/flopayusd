@@ -893,12 +893,12 @@ ol li::before {
   font-weight: 500;
 }
 
-#rupee_balance span:first-of-type,
+#usd_balance span:first-of-type,
 #flo_balance span:first-of-type,
 #btc_balance span:first-of-type {
   font-size: 1.5rem;
 }
-#rupee_balance span:nth-of-type(2),
+#usd_balance span:nth-of-type(2),
 #flo_balance span:nth-of-type(2),
 #btc_balance span:nth-of-type(2) {
   font-size: 1rem;

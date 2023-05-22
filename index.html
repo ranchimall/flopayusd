@@ -17,7 +17,7 @@
         const floGlobals = {
             blockchain: "FLO",
             adminID: "FH64hLqB71e6i11rnZZW7hvzoH8daCwy1J",
-            currency: "rupee",
+            currency: "USD",
             application: "blockchainUPI"
         }
     </script>
@@ -280,8 +280,8 @@
                     </div>
                     <div id="balance_wrapper" class="grid gap-0-5">
                         <div class="flex align-center space-between balance-card">
-                            <span>Rupee</span>
-                            <span id="rupee_balance"></span>
+                            <span>USD</span>
+                            <span id="usd_balance"></span>
                         </div>
                         <div class="flex align-center space-between balance-card">
                             <span>FLO</span>
@@ -294,7 +294,7 @@
                     </div>
                 </div>
                 <sm-chips id="wallet_section__asset_selector" class="user-element">
-                    <sm-chip value="rupee" selected>Rupee</sm-chip>
+                    <sm-chip value="USD" selected>USD</sm-chip>
                     <sm-chip value="btc">BTC</sm-chip>
                 </sm-chips>
                 <div id="asset_actions_wrapper" class="user-element">
@@ -365,7 +365,7 @@
                         <details class="grid gap-1"
                             style="border-top: solid thin rgba(var(--text-color), 0.5); padding-top: 1rem" open>
                             <summary style="margin-bottom: 1.5rem;">
-                                <h4 style="font-weight: 500;">Send Rupee tokens to other
+                                <h4 style="font-weight: 500;">Send USD tokens to other
                                     RanchiMall products</h4>
                                 <svg class="icon down-arrow" xmlns="http://www.w3.org/2000/svg" height="24px"
                                     viewBox="0 0 24 24" width="24px" fill="#000000">
@@ -413,53 +413,148 @@
                             </svg>
                             Send
                         </button>
-                        <button class="wallet-action" onclick="initConversion('rupee')">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-                                height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                <g>
-                                    <rect fill="none" height="24" width="24" />
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M13.66,7C13.1,5.82,11.9,5,10.5,5L6,5V3h12v2l-3.26,0c0.48,0.58,0.84,1.26,1.05,2L18,7v2l-2.02,0c-0.25,2.8-2.61,5-5.48,5 H9.77l6.73,7h-2.77L7,14v-2h3.5c1.76,0,3.22-1.3,3.46-3L6,9V7L13.66,7z" />
-                                    </g>
-                                </g>
+                        <button class="wallet-action" onclick="initConversion('USD')">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                                width="24px" fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1svg-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
                             </svg>
-                            Convert to Rupee
+                            Convert to USD
                         </button>
                     </div>
 
                 </div>
             </div>
-            <div class="grid hide-on-mobile user-element">
-                <div class="flex align-center space-between">
-                    <h4>Recent transactions</h4>
-                    <div class="flex gap-0-3">
-                        <button class="button button--small icon-only" title="Refresh recent transactions"
-                            onclick="render.recentTransactions()">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
-                                width="24px" fill="#000000">
-                                <path d="M0 0h24v24H0V0z" fill="none" />
-                                <path
-                                    d="M17.65 6.35c-1.63-1.63-3.94-2.57-6.48-2.31-3.67.37-6.69 3.35-7.1 7.02C3.52 15.91 7.27 20 12 20c3.19 0 5.93-1.87 7.21-4.56.32-.67-.16-1.44-.9-1.44-.37 0-.72.2-.88.53-1.13 2.43-3.84 3.97-6.8 3.31-2.22-.49-4.01-2.3-4.48-4.52C5.31 9.44 8.26 6 12 6c1.66 0 3.14.69 4.22 1.78l-1.51 1.51c-.63.63-.19 1.71.7 1.71H19c.55 0 1-.45 1-1V6.41c0-.89-1.08-1.34-1.71-.71l-.64.65z" />
-                            </svg>
-                        </button>
-                        <a class="button button--small" href="#/history">See all</a>
-                    </div>
-                </div>
-                <div id="recent_transactions" class="observe-empty-state grid gap-2 margin-top-1-5"></div>
-                <div class="empty-state">
-                    <h4 class="empty-state__title">No transactions yet</h4>
-                    <p class="empty-state__subtitle">Send or receive some assets to see them here</p>
+            svgiv class="grid hide-on-mobile user-element">
+            <div class="flex align-center space-between">
+                <h4>Recent transactions</h4>
+                <div class="flex gap-0-3">
+                    <button class="button button--small icon-only" title="Refresh recent transactions"
+                        onclick="render.recentTransactions()">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                            width="24px" fill="#000000">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path
+                                d="M17.65 6.35c-1.63-1.63-3.94-2.57-6.48-2.31-3.67.37-6.69 3.35-7.1 7.02C3.52 15.91 7.27 20 12 20c3.19 0 5.93-1.87 7.21-4.56.32-.67-.16-1.44-.9-1.44-.37 0-.72.2-.88.53-1.13 2.43-3.84 3.97-6.8 3.31-2.22-.49-4.01-2.3-4.48-4.52C5.31 9.44 8.26 6 12 6c1.66 0 3.14.69 4.22 1.78l-1.51 1.51c-.63.63-.19 1.71.7 1.71H19c.55 0 1-.45 1-1V6.41c0-.89-1.08-1.34-1.71-.71l-.64.65z" />
+                        </svg>
+                    </button>
+                    <a class="button button--small" href="#/history">See all</a>
                 </div>
             </div>
-            <div class="grid gap-1 hide-on-mobile user-element">
-                <div class="flex align-center space-between">
-                    <h4>Contacts</h4>
-                    <a class="button button--small" href="#/contacts">See all</a>
+            <div id="recent_transactions" class="observe-empty-state grid gap-2 margin-top-1-5"></div>
+            <div class="empty-state">
+                <h4 class="empty-state__title">No transactions yet</h4>
+                <p class="empty-state__subtitle">Send or receive some assets to see them here</p>
+            </div>
+    </div>
+    <div class="grid gap-1 hide-on-mobile user-element">
+        <div class="flex align-center space-between">
+            <h4>Contacts</h4>
+            <a class="button button--small" href="#/contacts">See all</a>
+        </div>
+        <button class="button interact margin-right-auto" onclick="openPopup('add_address_popup')">
+            <svg class="icon margin-right-0-5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                width="24px" fill="#000000">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+            Add FLO address
+        </button>
+        <ul id="recent_contacts" class="observe-empty-state grid gap-1"></ul>
+        <div class="empty-state">
+            <h4 class="empty-state__title">No contacts yet</h4>
+            <p class="empty-state__subtitle">Add some contacts to see them here</p>
+        </div>
+    </div>
+    <section id="cashier" class=" grid gap-1 hidden admin-element">
+        <div class="flex align-center space-between">
+            <h4>Requests</h4>
+            <sm-chips id="cashier_requests_selector">
+                <sm-chip value="pending" selected>Pending</sm-chip>
+                <sm-chip value="processed">Processed</sm-chip>
+            </sm-chips>
+        </div>
+        <div id="cashier_requests_wrapper">
+            <div>
+                <ul id="cashier_pending_request_list" class="observe-empty-state"></ul>
+                <div class="empty-state">
+                    <p>No requests to process</p>
                 </div>
-                <button class="button interact margin-right-auto" onclick="openPopup('add_address_popup')">
+            </div>
+            <div class="hidden">
+                <ul id="cashier_processed_request_list" class="observe-empty-state"></ul>
+                <div class="empty-state">
+                    <p>No requests to process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+    <section id="history" class="inner-page hidden">
+        <div class="page__header">
+            <button class="button icon-only margin-right-0-5 hide-on-mobile" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <div class="flex align-center space-between w-100">
+                <h1>Payments history</h1>
+                <button class="button button--small align-self-end" onclick="openPopup('payments_filters_popup')">
+                    <svg class="icon margin-right-0-5" xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
+                    </svg>
+                    Filters
+                </button>
+            </div>
+            <div id="history_applied_filters" class="flex gap-0-5"></div>
+        </div>
+        <ul id="payments_history" class="observe-empty-state"></ul>
+        <div class=" empty-state gap-1 justify-center text-center">
+            <p>No transactions</p>
+        </div>
+    </section>
+    <section id="wallet" class="inner-page hidden">
+        <div class="page__header">
+            <button class="button icon-only margin-right-0-5" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <h1>Wallet transactions</h1>
+        </div>
+        <div id="wallet_history_wrapper" class="grid gap-1-5">
+            <div class="hidden grid gap-1">
+                <h4>Pending</h4>
+                <ul id="pending_wallet_transactions" class="grid gap-0-5"></ul>
+            </div>
+            <div class="grid gap-1">
+                <h4>Processed</h4>
+                <ul id="wallet_history" class="observe-empty-state grid gap-0-5"></ul>
+                <div class=" empty-state gap-1 justify-center text-center">
+                    <p>No transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacts" class="inner-page hidden flex flex-direction-column">
+        <div class="page__header">
+            <button class="button icon-only margin-right-0-5 hide-on-mobile" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <div class="flex align-center space-between w-100">
+                <h1>Contacts</h1>
+                <button class="button interact" onclick="openPopup('add_address_popup')">
                     <svg class="icon margin-right-0-5" xmlns="http://www.w3.org/2000/svg" height="24px"
                         viewBox="0 0 24 24" width="24px" fill="#000000">
                         <path d="M0 0h24v24H0z" fill="none" />
@@ -467,256 +562,155 @@
                     </svg>
                     Add FLO address
                 </button>
-                <ul id="recent_contacts" class="observe-empty-state grid gap-1"></ul>
-                <div class="empty-state">
-                    <h4 class="empty-state__title">No contacts yet</h4>
-                    <p class="empty-state__subtitle">Add some contacts to see them here</p>
-                </div>
-            </div>
-            <section id="cashier" class=" grid gap-1 hidden admin-element">
-                <div class="flex align-center space-between">
-                    <h4>Requests</h4>
-                    <sm-chips id="cashier_requests_selector">
-                        <sm-chip value="pending" selected>Pending</sm-chip>
-                        <sm-chip value="processed">Processed</sm-chip>
-                    </sm-chips>
-                </div>
-                <div id="cashier_requests_wrapper">
-                    <div>
-                        <ul id="cashier_pending_request_list" class="observe-empty-state"></ul>
-                        <div class="empty-state">
-                            <p>No requests to process</p>
-                        </div>
-                    </div>
-                    <div class="hidden">
-                        <ul id="cashier_processed_request_list" class="observe-empty-state"></ul>
-                        <div class="empty-state">
-                            <p>No requests to process</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <section id="history" class="inner-page hidden">
-            <div class="page__header">
-                <button class="button icon-only margin-right-0-5 hide-on-mobile" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <div class="flex align-center space-between w-100">
-                    <h1>Payments history</h1>
-                    <button class="button button--small align-self-end" onclick="openPopup('payments_filters_popup')">
-                        <svg class="icon margin-right-0-5" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 0 24 24" width="24px" fill="#000000">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
-                        </svg>
-                        Filters
-                    </button>
-                </div>
-                <div id="history_applied_filters" class="flex gap-0-5"></div>
-            </div>
-            <ul id="payments_history" class="observe-empty-state"></ul>
-            <div class=" empty-state gap-1 justify-center text-center">
-                <p>No transactions</p>
-            </div>
-        </section>
-        <section id="wallet" class="inner-page hidden">
-            <div class="page__header">
-                <button class="button icon-only margin-right-0-5" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <h1>Wallet transactions</h1>
-            </div>
-            <div id="wallet_history_wrapper" class="grid gap-1-5">
-                <div class="hidden grid gap-1">
-                    <h4>Pending</h4>
-                    <ul id="pending_wallet_transactions" class="grid gap-0-5"></ul>
-                </div>
-                <div class="grid gap-1">
-                    <h4>Processed</h4>
-                    <ul id="wallet_history" class="observe-empty-state grid gap-0-5"></ul>
-                    <div class=" empty-state gap-1 justify-center text-center">
-                        <p>No transactions</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contacts" class="inner-page hidden flex flex-direction-column">
-            <div class="page__header">
-                <button class="button icon-only margin-right-0-5 hide-on-mobile" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <div class="flex align-center space-between w-100">
-                    <h1>Contacts</h1>
-                    <button class="button interact" onclick="openPopup('add_address_popup')">
-                        <svg class="icon margin-right-0-5" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 0 24 24" width="24px" fill="#000000">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-                        </svg>
-                        Add FLO address
-                    </button>
-                </div>
-            </div>
-            <ul id="saved_ids_list" class="observe-empty-state grid"></ul>
-            <div class="empty-state justify-center text-center align-center h-100" style="align-content: center;">
-                <svg class="justify-self-center" style="height: 12rem;" id="bb7dac0d-c86d-4eae-9345-05ead570be6d"
-                    data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-                    <defs>
-                        <style>
-                            .e4b4c873-5e79-4c66-a530-269f7775150b {
-                                fill: rgba(var(--text-color), 0.03);
-                            }
-
-                            .f8c35eef-c260-42fc-be6f-7c8afb0beeeb {
-                                fill: rgba(var(--text-color), 0.2);
-                            }
-
-                            .ee8c2e6d-b8f3-4b81-80ab-31d470d121b9 {
-                                fill: rgba(var(--text-color), 0.1);
-                            }
-                        </style>
-                    </defs>
-                    <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="34.76" y="40.75" width="177.53" height="41.42"
-                        rx="4" />
-                    <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="57.21" cy="61.46" r="9.29" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="75.4" y="51.37" width="40.44" height="9.03"
-                        rx="1.92" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="75.4" y="62.79" width="80.09" height="9.03"
-                        rx="1.92" />
-                    <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="10" y="99.29" width="177.53" height="41.42"
-                        rx="4" />
-                    <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="32.45" cy="120" r="9.29" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="50.64" y="109.91" width="40.44" height="9.03"
-                        rx="1.92" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="50.64" y="121.33" width="80.09" height="9.03"
-                        rx="1.92" />
-                    <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="52.47" y="157.83" width="177.53"
-                        height="41.42" rx="4" />
-                    <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="74.93" cy="178.54" r="9.29" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="93.12" y="168.46" width="40.44" height="9.03"
-                        rx="1.92" />
-                    <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="93.12" y="179.87" width="80.09" height="9.03"
-                        rx="1.92" />
-                </svg>
-                <div class="grid gap-0-5">
-                    <b>No Saved FLO address</b>
-                    <span>Use 'Add FLO address' to add a new FLO address</span>
-                </div>
-            </div>
-            <p id="saved_ids_tip" class="flex align-center justify-center" style="margin: 0 auto;">
-                <svg class="icon margin-right-0-5" style="fill: #ffc107;" xmlns="http://www.w3.org/2000/svg"
-                    height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path
-                        d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z" />
-                </svg>
-                <span>Tap on saved IDs to see transaction history</span>
-            </p>
-        </section>
-        <section id="contact" class="inner-page">
-            <div class="flex align-center">
-                <button class="button icon-only margin-right-0-5" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <h4 id="contact__title">FUwLtWesPB1RpfSaHi2D4xYER3GycNojJN</h4>
-            </div>
-            <ul id="contact__transactions" class="observe-empty-state"></ul>
-            <div class="empty-state grid gap-1 justify-center text-center" style="justify-items: center;">
-                <p>Nothing to see here</p>
-            </div>
-            <div class="flex gap-0-5">
-                <button class="button justify-right" onclick="showTokenTransfer('request')">Request</button>
-                <button class="button" onclick="showTokenTransfer('send')">Pay</button>
-            </div>
-        </section>
-        <section id="requests" class="inner-page">
-            <div class="page__header">
-                <button class="button icon-only margin-right-0-5" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <h1>Payment request history</h1>
-            </div>
-            <ul id="payment_request_history" class="observe-empty-state grid gap-0-5"></ul>
-            <div class=" empty-state gap-1 justify-center text-center">
-                <p>No requests</p>
-            </div>
-        </section>
-        <div id="transaction" class="inner-page grid gap-2">
-            <div class="grid gap-1 justify-start">
-                <button class="button icon-only margin-right-0-5" onclick="history.back()">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                        fill="#000000">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                    </svg>
-                </button>
-                <h4 id="transaction__type">Payment request</h4>
-            </div>
-            <div id="transaction_details" class="grid gap-2">
-                <div class="grid gap-1"></div>
             </div>
         </div>
-        <nav id="bottom_nav" class="hide-on-desktop user-element">
-            <ul>
-                <li>
-                    <a href="#/home" class="nav-item nav-item--active">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
-                            width="24px" fill="#000000">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                        </svg>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/history" class="nav-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-                            height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                            <path d="M0,0h24v24H0V0z" fill="none" />
-                            <g>
-                                <path
-                                    d="M19.5,3.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2L7.5,3.5L6,2v14H3v3c0,1.66,1.34,3,3,3h12c1.66,0,3-1.34,3-3V2 L19.5,3.5z M19,19c0,0.55-0.45,1-1,1s-1-0.45-1-1v-3H8V5h11V19z" />
-                                <rect height="2" width="6" x="9" y="7" />
-                                <rect height="2" width="2" x="16" y="7" />
-                                <rect height="2" width="6" x="9" y="10" />
-                                <rect height="2" width="2" x="16" y="10" />
-                            </g>
-                        </svg>
-                        <span>History</span>
-                    </a>
-                </li>
-                <li><a href="#/contacts" class="nav-item ">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
-                            width="24px" fill="#000000">
-                            <path d="M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z" fill="none" />
+        <ul id="saved_ids_list" class="observe-empty-state grid"></ul>
+        <div class="empty-state justify-center text-center align-center h-100" style="align-content: center;">
+            <svg class="justify-self-center" style="height: 12rem;" id="bb7dac0d-c86d-4eae-9345-05ead570be6d"
+                data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+                <defs>
+                    <style>
+                        .e4b4c873-5e79-4c66-a530-269f7775150b {
+                            fill: rgba(var(--text-color), 0.03);
+                        }
+
+                        .f8c35eef-c260-42fc-be6f-7c8afb0beeeb {
+                            fill: rgba(var(--text-color), 0.2);
+                        }
+
+                        .ee8c2e6d-b8f3-4b81-80ab-31d470d121b9 {
+                            fill: rgba(var(--text-color), 0.1);
+                        }
+                    </style>
+                </defs>
+                <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="34.76" y="40.75" width="177.53" height="41.42"
+                    rx="4" />
+                <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="57.21" cy="61.46" r="9.29" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="75.4" y="51.37" width="40.44" height="9.03"
+                    rx="1.92" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="75.4" y="62.79" width="80.09" height="9.03"
+                    rx="1.92" />
+                <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="10" y="99.29" width="177.53" height="41.42"
+                    rx="4" />
+                <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="32.45" cy="120" r="9.29" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="50.64" y="109.91" width="40.44" height="9.03"
+                    rx="1.92" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="50.64" y="121.33" width="80.09" height="9.03"
+                    rx="1.92" />
+                <rect class="e4b4c873-5e79-4c66-a530-269f7775150b" x="52.47" y="157.83" width="177.53" height="41.42"
+                    rx="4" />
+                <circle class="f8c35eef-c260-42fc-be6f-7c8afb0beeeb" cx="74.93" cy="178.54" r="9.29" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="93.12" y="168.46" width="40.44" height="9.03"
+                    rx="1.92" />
+                <rect class="ee8c2e6d-b8f3-4b81-80ab-31d470d121b9" x="93.12" y="179.87" width="80.09" height="9.03"
+                    rx="1.92" />
+            </svg>
+            <div class="grid gap-0-5">
+                <b>No Saved FLO address</b>
+                <span>Use 'Add FLO address' to add a new FLO address</span>
+            </div>
+        </div>
+        <p id="saved_ids_tip" class="flex align-center justify-center" style="margin: 0 auto;">
+            <svg class="icon margin-right-0-5" style="fill: #ffc107;" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 0 24 24" width="24px" fill="#000000">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z" />
+            </svg>
+            <span>Tap on saved IDs to see transaction history</span>
+        </p>
+    </section>
+    <section id="contact" class="inner-page">
+        <div class="flex align-center">
+            <button class="button icon-only margin-right-0-5" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <h4 id="contact__title">FUwLtWesPB1RpfSaHi2D4xYER3GycNojJN</h4>
+        </div>
+        <ul id="contact__transactions" class="observe-empty-state"></ul>
+        <div class="empty-state grid gap-1 justify-center text-center" style="justify-items: center;">
+            <p>Nothing to see here</p>
+        </div>
+        <div class="flex gap-0-5">
+            <button class="button justify-right" onclick="showTokenTransfer('request')">Request</button>
+            <button class="button" onclick="showTokenTransfer('send')">Pay</button>
+        </div>
+    </section>
+    <section id="requests" class="inner-page">
+        <div class="page__header">
+            <button class="button icon-only margin-right-0-5" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <h1>Payment request history</h1>
+        </div>
+        <ul id="payment_request_history" class="observe-empty-state grid gap-0-5"></ul>
+        <div class=" empty-state gap-1 justify-center text-center">
+            <p>No requests</p>
+        </div>
+    </section>
+    <div id="transaction" class="inner-page grid gap-2">
+        <div class="grid gap-1 justify-start">
+            <button class="button icon-only margin-right-0-5" onclick="history.back()">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                    fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <h4 id="transaction__type">Payment request</h4>
+        </div>
+        <div id="transaction_details" class="grid gap-2">
+            <div class="grid gap-1"></div>
+        </div>
+    </div>
+    <nav id="bottom_nav" class="hide-on-desktop user-element">
+        <ul>
+            <li>
+                <a href="#/home" class="nav-item nav-item--active">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/history" class="nav-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px"
+                        viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0,0h24v24H0V0z" fill="none" />
+                        <g>
                             <path
-                                d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z" />
-                        </svg>
-                        <span>Contacts</span>
-                    </a></li>
-            </ul>
-        </nav>
+                                d="M19.5,3.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2L7.5,3.5L6,2v14H3v3c0,1.66,1.34,3,3,3h12c1.66,0,3-1.34,3-3V2 L19.5,3.5z M19,19c0,0.55-0.45,1-1,1s-1-0.45-1-1v-3H8V5h11V19z" />
+                            <rect height="2" width="6" x="9" y="7" />
+                            <rect height="2" width="2" x="16" y="7" />
+                            <rect height="2" width="6" x="9" y="10" />
+                            <rect height="2" width="2" x="16" y="10" />
+                        </g>
+                    </svg>
+                    <span>History</span>
+                </a>
+            </li>
+            <li><a href="#/contacts" class="nav-item ">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z" />
+                    </svg>
+                    <span>Contacts</span>
+                </a></li>
+        </ul>
+    </nav>
     </div>
     <!-- Popups -->
     <sm-popup id="add_address_popup">
@@ -875,13 +869,13 @@
                         <span class="checkmark">All</span>
                     </label>
                     <label class="category-chip interact">
-                        <input type="radio" name="asset" value="rupee" autocomplete="off" />
+                        <input type="radio" name="asset" value="USD" autocomplete="off" />
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
                             width="24px" fill="#000000">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
                         </svg>
-                        <span class="checkmark">Rupee</span>
+                        <span class="checkmark">USD</span>
                     </label>
                     <label class="category-chip interact">
                         <input type="radio" name="asset" value="btc" autocomplete="off" />
@@ -1090,7 +1084,7 @@
                     </button>
                 </div>
                 <div class="multi-state-button">
-                    <button id="withdraw_rupee_button" class="button button--primary cta"
+                    <button id="withdraw_usd_button" class="button button--primary cta"
                         onclick="withdrawMoneyFromWallet()" type="submit">Withdraw</button>
                 </div>
             </sm-form>
@@ -2100,8 +2094,8 @@
                     getRef('contact__title').textContent = getFloIdTitle(params.floId)
                     getRef('contact__transactions').innerHTML = '<sm-spinner></sm-spinner>'
                     Promise.all([
-                        floTokenAPI.fetch(`api/v1.0/getTokenTransactions?token=rupee&senderFloAddress=${floGlobals.myFloID}&destFloAddress=${params.floId}`),
-                        floTokenAPI.fetch(`api/v1.0/getTokenTransactions?token=rupee&senderFloAddress=${params.floId}&destFloAddress=${floGlobals.myFloID}`)])
+                        floTokenAPI.fetch(`api/v1.0/getTokenTransactions?token=USD&senderFloAddress=${floGlobals.myFloID}&destFloAddress=${params.floId}`),
+                        floTokenAPI.fetch(`api/v1.0/getTokenTransactions?token=USD&senderFloAddress=${params.floId}&destFloAddress=${floGlobals.myFloID}`)])
                         .then(([sentTransactions, receivedTransactions]) => {
                             const allTransactions = Object.values({ ...sentTransactions.transactions, ...receivedTransactions.transactions }).sort((a, b) => b.transactionDetails.time - a.transactionDetails.time)
                             if (contactHistoryLoader) {
@@ -2824,7 +2818,7 @@
             const upiId = getRef('select_withdraw_upi_id').value;
             if (!upiId)
                 return notify("Please add an UPI ID to continue", 'error');
-            buttonLoader('withdraw_rupee_button', true);
+            buttonLoader('withdraw_usd_button', true);
             getRef('withdrawal_blockchain_link').classList.add('hidden');
             User.sendToken(cashier, amount, 'for token-to-cash').then(txid => {
                 console.warn(`Withdraw ${amount} from cashier ${cashier}`, txid);
@@ -2839,12 +2833,12 @@
                     showChildElement('withdraw_wallet_process', 2);
                     console.error(error)
                 }).finally(() => {
-                    buttonLoader('withdraw_rupee_button', false);
+                    buttonLoader('withdraw_usd_button', false);
                 });
             }).catch(error => {
                 getRef('withdrawal_failed_reason').textContent = error;
                 showChildElement('withdraw_wallet_process', 2);
-                buttonLoader('withdraw_rupee_button', false);
+                buttonLoader('withdraw_usd_button', false);
                 console.error(error)
             })
         }
@@ -2856,19 +2850,19 @@
             switch (type) {
                 case 'exchange': {
                     title = 'Transfer to Exchange';
-                    description = 'Deposit rupee tokens in RanchiMall Exchange';
-                    successTitle = 'Rupees transfer initiated';
+                    description = 'Deposit USD tokens in RanchiMall Exchange';
+                    successTitle = 'USD transfer initiated';
                     successDescription = html`<p>Amount may take upto 30 mins to show up in exchange</p>`;
                 } break;
                 case 'btc-bonds': {
                     title = 'Transfer to Blockchain Bonds';
-                    description = 'Buy Blockchain Bonds with rupee tokens';
-                    successTitle = 'Rupees transferred for Blockchain Bonds';
+                    description = 'Buy Blockchain Bonds with USD tokens';
+                    successTitle = 'USD transferred for Blockchain Bonds';
                 } break;
                 case 'bobs-fund': {
                     title = `Transfer to Bob's fund`;
-                    description = `Buy Bob's fund with rupee tokens`;
-                    successTitle = `Rupees transferred for Bob's fund`;
+                    description = `Buy Bob's fund with USD tokens`;
+                    successTitle = `USD transferred for Bob's fund`;
                 } break;
             }
             renderElem(getRef('external_transfer_process'), html`
@@ -2906,19 +2900,19 @@
             let name = '';
             switch (type) {
                 case 'exchange': {
-                    confirmationMessage = `You are depositing ${amount} rupee tokens to exchange`;
+                    confirmationMessage = `You are depositing ${amount} USD tokens to exchange`;
                     receiverFloID = floGlobals.exchangeSink;
                     name = 'RanchiMall Exchange';
                 } break;
                 case 'btc-bonds': {
                     receiverFloID = 'FBBstZ2GretgQqDP55yt8iVd4KNZkdvEzH';
-                    confirmationMessage = `You are transferring ${amount} rupee tokens to blockchain bond at FLO address ${receiverFloID}`;
+                    confirmationMessage = `You are transferring ${amount} USD tokens to blockchain bond at FLO address ${receiverFloID}`;
                     remarks = '|blockchain-bond';
                     name = 'Blockchain Bonds';
                 } break;
                 case 'bobs-fund': {
                     receiverFloID = 'FFXy5pJnfzu2fCDLhpUremyXQjGtFpgCDN';
-                    confirmationMessage = `You are transferring ${amount} rupee tokens to Bob's fund at FLO address ${receiverFloID}`;
+                    confirmationMessage = `You are transferring ${amount} USD tokens to Bob's fund at FLO address ${receiverFloID}`;
                     remarks = '|bobs-fund';
                     name = `Bob's Fund`;
                 } break;
@@ -2934,7 +2928,7 @@
                                 result = await User.sendToken(receiverFloID, amount, remarks)
                                 document.getElementById('external_transfer__link').href = `https://flosight.duckdns.org/tx/${result}`;
                             } else if (type === 'exchange') {
-                                result = await floExchangeAPI.depositToken('rupee', amount, floGlobals.myFloID, receiverFloID, privateKey)
+                                result = await floExchangeAPI.depositToken('USD', amount, floGlobals.myFloID, receiverFloID, privateKey)
                             }
                             console.log(result);
                             showChildElement('external_transfer_process', 1);
@@ -2945,8 +2939,8 @@
                             if (error.code) {
                                 errorText = error.message;
                             }
-                            if (error === 'Insufficient rupee# balance')
-                                errorText = 'Insufficient rupee token balance in your wallet, please top-up your wallet.';
+                            if (error === 'Insufficient USD# balance')
+                                errorText = 'Insufficient USD token balance in your wallet, please top-up your wallet.';
                             document.getElementById('external_transfer__failed_reason').textContent = errorText;
                             showChildElement('external_transfer_process', 2);
                         } finally {
@@ -2963,7 +2957,7 @@
         }
 
         getRef('wallet_section__asset_selector').addEventListener('change', (e) => {
-            if (e.target.value === 'rupee') {
+            if (e.target.value === 'USD') {
                 showChildElement('asset_actions_wrapper', 0, { entry: slideInRight, exit: slideOutRight });
             } else {
                 showChildElement('asset_actions_wrapper', 1, { entry: slideInLeft, exit: slideOutLeft });
@@ -3446,7 +3440,7 @@
                     </li>
                 `;
             },
-            rupeeTxCard(transactionDetails) {
+            usdTxCard(transactionDetails) {
                 const { txid, time, sender, receiver, tokenAmount } = transactionDetails;
                 let transactionReceiver
                 let className
@@ -3465,7 +3459,7 @@
                 return html.node`
                     <li class="${className}" data-txid="${txid}">
                         <div class="transaction__icon">
-                            <svg class="icon icon--rupee" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M13.66,7C13.1,5.82,11.9,5,10.5,5L6,5V3h12v2l-3.26,0c0.48,0.58,0.84,1.26,1.05,2L18,7v2l-2.02,0c-0.25,2.8-2.61,5-5.48,5 H9.77l6.73,7h-2.77L7,14v-2h3.5c1.76,0,3.22-1.3,3.46-3L6,9V7L13.66,7z"/></g></g></svg>
+                            <svg class="icon icon--USD" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M13.66,7C13.1,5.82,11.9,5,10.5,5L6,5V3h12v2l-3.26,0c0.48,0.58,0.84,1.26,1.05,2L18,7v2l-2.02,0c-0.25,2.8-2.61,5-5.48,5 H9.77l6.73,7h-2.77L7,14v-2h3.5c1.76,0,3.22-1.3,3.46-3L6,9V7L13.66,7z"/></g></g></svg>
                             ${icon}
                         </div>
                         <div class="grid gap-0-5">
@@ -3688,8 +3682,8 @@
                 }
             },
             transactionCard(details) {
-                if (details.asset === 'rupee') {
-                    return render.rupeeTxCard(details)
+                if (details.asset === 'USD') {
+                    return render.usdTxCard(details)
                 } else if (details.asset === 'btc') {
                     return render.btcTxCard(details)
                 }
@@ -3767,9 +3761,9 @@
             return new Promise((resolve, reject) => {
                 let promises = [];
                 if (asset === 'all')
-                    promises = [getRupeeTransactions(type), getBtcTransactions(type)];
-                else if (asset === 'rupee')
-                    promises = [getRupeeTransactions(type)];
+                    promises = [getUsdTransactions(type), getBtcTransactions(type)];
+                else if (asset === 'USD')
+                    promises = [getUsdTransactions(type)];
                 else if (asset === 'btc')
                     promises = [getBtcTransactions(type)];
 
@@ -3787,14 +3781,14 @@
                 })
             })
         }
-        function getRupeeTransactions(type = 'all') {
+        function getUsdTransactions(type = 'all') {
             return new Promise((resolve, reject) => {
                 if (!floGlobals.myFloID) {
                     resolve([])
                     return;
                 }
                 floTokenAPI.getAllTxs(floGlobals.myFloID).then(({ transactions }) => {
-                    let rupeeTransactions = [];
+                    let usdTransactions = [];
                     let shouldFilter = type !== 'all';
                     let propToCheck
                     if (shouldFilter)
@@ -3805,13 +3799,13 @@
                             if (details[propToCheck] !== floGlobals.myFloID)
                                 continue;
                         }
-                        rupeeTransactions.push({
+                        usdTransactions.push({
                             ...details,
                             txid: transactionId,
-                            asset: 'rupee',
+                            asset: 'USD',
                         })
                     }
-                    resolve(rupeeTransactions)
+                    resolve(usdTransactions)
                 }).catch(e => {
                     reject(e)
                 })
@@ -3872,7 +3866,7 @@
             if (button)
                 buttonLoader(button, true)
             floTokenAPI.getBalance(floGlobals.myFloID).then((balance = 0) => {
-                getRef('rupee_balance').textContent = formatAmount(balance)
+                getRef('usd_balance').textContent = formatAmount(balance)
                 if (button)
                     buttonLoader(button, false)
             })
@@ -4040,9 +4034,9 @@
             getRef('token_transfer__button').textContent = type;
             currentUserAction = type;
             if (type === 'send') {
-                getRef('token_transfer__title').textContent = 'Send rupee';
+                getRef('token_transfer__title').textContent = 'Send USD';
             } else {
-                getRef('token_transfer__title').textContent = 'Request rupee';
+                getRef('token_transfer__title').textContent = 'Request USD';
             }
             if (appState.lastPage === 'contact') {
                 getRef('token_transfer__receiver').value = appState.params.floId;
@@ -4425,7 +4419,7 @@
         function convertCurrency(amount) {
             let convertedAmount = 0;
             if (amount && !Number.isNaN(amount)) {
-                if (convertingTo === 'rupee') {
+                if (convertingTo === 'USD') {
                     convertedAmount = parseFloat((amount * globalExchangeRate.inr).toFixed(2));
                 } else {
                     convertedAmount = parseFloat((amount / globalExchangeRate.inr).toFixed(8))
@@ -4440,7 +4434,7 @@
             if (e.target.validity.rangeUnderflow)
                 e.target.setAttribute('error-text', `Minimum amount is ${convertingTo === 'btc' ? '₹10' : '0.000001BTC'}`)
             if (e.target.validity.rangeOverflow)
-                e.target.setAttribute('error-text', `You do not have enough ${convertingTo === 'btc' ? 'rupee tokens' : 'BTC'}`)
+                e.target.setAttribute('error-text', `You do not have enough ${convertingTo === 'btc' ? 'USD tokens' : 'BTC'}`)
         }
         function handleConversionAmountSelection(e) {
             const fromAmount = parseFloat(e.target.value.trim());
@@ -4452,7 +4446,7 @@
         async function initConversion(toAsset) {
             try {
                 convertingTo = toAsset;
-                const fromAsset = convertingTo === 'btc' ? 'rupee' : 'btc';
+                const fromAsset = convertingTo === 'btc' ? 'USD' : 'btc';
                 renderElem(getRef('conversion_status'), html`
                     <sm-spinner class="justify-self-center"></sm-spinner>
                     <p class="text-center">Checking conversion capability...</p>
@@ -4463,13 +4457,13 @@
                 // get possible conversion values
                 const {
                     [floExchangeAPI.processCode.CONVERT_MODE_GET]: permissibleBtc,
-                    [floExchangeAPI.processCode.CONVERT_MODE_PUT]: permissibleRupee
+                    [floExchangeAPI.processCode.CONVERT_MODE_PUT]: permissibleUsd
                 } = await floExchangeAPI.getConvertValues()
                 // const {
                 //     [floExchangeAPI.processCode.CONVERT_MODE_GET]: permissibleBtc,
-                //     [floExchangeAPI.processCode.CONVERT_MODE_PUT]: permissibleRupee
+                //     [floExchangeAPI.processCode.CONVERT_MODE_PUT]: permissibleUsd
                 // } = { 0: [100, 200, 300], 1: [100, 200, 300] }
-                if (convertingTo === 'btc' && !permissibleBtc || convertingTo === 'rupee' && !permissibleRupee) {
+                if (convertingTo === 'btc' && !permissibleBtc || convertingTo === 'USD' && !permissibleUsd) {
                     renderElem(getRef('conversion_status'), html`
                         <svg class="icon justify-self-center error-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27L15.73 3zM12 17.3c-.72 0-1.3-.58-1.3-1.3 0-.72.58-1.3 1.3-1.3.72 0 1.3.58 1.3 1.3 0 .72-.58 1.3-1.3 1.3zm1-4.3h-2V7h2v6z"/></svg>
                         <strong>Conversion service not available</strong>
@@ -4487,39 +4481,39 @@
                     case 'btc':
                         assetBalance = await floTokenAPI.getBalance(floGlobals.myFloID)
                         if (Array.isArray(permissibleBtc)) {
-                            description = `Select the amount of rupee tokens you want to convert to BTC`
+                            description = `Select the amount of USD tokens you want to convert to BTC`
                             isRange = false;
                             step = 0.00000001;
                             leastAllowed = Math.min(...permissibleBtc);
                         } else if (permissibleBtc.min) {
                             const { min, max } = permissibleBtc;
-                            description = `Enter the amount of rupee tokens you want to convert to BTC. Minimum amount is ${min} and maximum amount is ${max}`
+                            description = `Enter the amount of USD tokens you want to convert to BTC. Minimum amount is ${min} and maximum amount is ${max}`
                             leastAllowed = min;
                             maxAllowed = Math.min(max, assetBalance);
                         }
-                        title = `Convert Rupee tokens to BTC`;
+                        title = `Convert USD tokens to BTC`;
                         break;
-                    case 'rupee':
+                    case 'USD':
                         assetBalance = await btcOperator.getBalance(floGlobals.myBtcID)
-                        if (Array.isArray(permissibleRupee)) {
-                            description = `Select the amount of BTC you want to convert to rupee tokens`
+                        if (Array.isArray(permissibleUsd)) {
+                            description = `Select the amount of BTC you want to convert to USD tokens`
                             isRange = false;
                             step = 0.01;
-                            leastAllowed = Math.min(...permissibleRupee);
-                        } else if (permissibleRupee.min) {
-                            const { min, max } = permissibleRupee;
-                            description = `Enter the amount of BTC you want to convert to rupee tokens. Minimum amount is ${min} and maximum amount is ${max}`
+                            leastAllowed = Math.min(...permissibleUsd);
+                        } else if (permissibleUsd.min) {
+                            const { min, max } = permissibleUsd;
+                            description = `Enter the amount of BTC you want to convert to USD tokens. Minimum amount is ${min} and maximum amount is ${max}`
                             leastAllowed = min;
                             maxAllowed = Math.min(max, assetBalance);
                         }
-                        title = `Convert BTC to Rupee tokens`;
+                        title = `Convert BTC to USD tokens`;
                         break;
                 }
                 if (leastAllowed > assetBalance) {
                     renderElem(getRef('conversion_status'), html`
                             <svg class="icon justify-self-center error-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27L15.73 3zM12 17.3c-.72 0-1.3-.58-1.3-1.3 0-.72.58-1.3 1.3-1.3.72 0 1.3.58 1.3 1.3 0 .72-.58 1.3-1.3 1.3zm1-4.3h-2V7h2v6z"/></svg>
                             <strong>
-                                You do not have enough ${convertingTo === 'btc' ? 'Rupee tokens' : 'BTC'} to convert to ${convertingTo.toUpperCase()}. Minimum amount is ${leastAllowed}    
+                                You do not have enough ${convertingTo === 'btc' ? 'USD tokens' : 'BTC'} to convert to ${convertingTo.toUpperCase()}. Minimum amount is ${leastAllowed}    
                             </strong>
                         `)
                     return
@@ -4535,7 +4529,7 @@
                     ${isRange ? html`
                             <sm-input id="conversion_amount" oninput=${handleConversionAmountInput} min=${leastAllowed} max=${maxAllowed} step=${step} type="number" placeholder="Amount" autofocus animate required>
                                 <div id="conversion_asset_icon" slot="icon">
-                                    ${fromAsset === 'rupee' ?
+                                    ${fromAsset === 'USD' ?
                             html`<svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M13.66,7C13.1,5.82,11.9,5,10.5,5L6,5V3h12v2l-3.26,0c0.48,0.58,0.84,1.26,1.05,2L18,7v2l-2.02,0c-0.25,2.8-2.61,5-5.48,5 H9.77l6.73,7h-2.77L7,14v-2h3.5c1.76,0,3.22-1.3,3.46-3L6,9V7L13.66,7z"/></g></g></svg>` :
                             html`<svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"> <g> <rect fill="none" height="24" width="24"></rect> </g> <g> <path d="M17.06,11.57C17.65,10.88,18,9.98,18,9c0-1.86-1.27-3.43-3-3.87L15,3h-2v2h-2V3H9v2H6v2h2v10H6v2h3v2h2v-2h2v2h2v-2 c2.21,0,4-1.79,4-4C19,13.55,18.22,12.27,17.06,11.57z M10,7h4c1.1,0,2,0.9,2,2s-0.9,2-2,2h-4V7z M15,17h-5v-4h5c1.1,0,2,0.9,2,2 S16.1,17,15,17z"> </path> </g> </svg>`
                         }        
@@ -4543,7 +4537,7 @@
                             </sm-input>
                         `: html`
                             <fieldset class="flex flex-wrap gap-0-3 align-center" onchange=${handleConversionAmountSelection}>
-                                ${(convertingTo === 'btc' ? permissibleBtc : permissibleRupee).map((amount) => html`
+                                ${(convertingTo === 'btc' ? permissibleBtc : permissibleUsd).map((amount) => html`
                                         <label class="amount-option">
                                             <input type="radio" name="amount" value="${amount}" required>
                                             <span>${amount}</span>
@@ -4582,7 +4576,7 @@
             getConfirmation('Are you sure you want to convert?', { confirmText: 'Convert' }).then(async (res) => {
                 if (!res) return;
                 buttonLoader('convert_asset', true)
-                const fromAsset = convertingTo === 'btc' ? 'rupee' : 'btc';
+                const fromAsset = convertingTo === 'btc' ? 'USD' : 'btc';
                 const fromAmount = parseFloat((document.getElementById('conversion_amount') || document.querySelector('.amount-option input:checked')).value.trim());
                 try {
                     let result
